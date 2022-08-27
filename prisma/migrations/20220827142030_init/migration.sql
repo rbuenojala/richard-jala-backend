@@ -1,0 +1,2 @@
+-- AddForeignKey
+ALTER TABLE "CatTags" ADD CONSTRAINT "CatTags_tagId_fkey" FOREIGN KEY ("tagId") REFERENCES "Tag"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

@@ -21,10 +21,12 @@ model Cat {
 }
 
 model CatTags {
-  tagId Int  @id @default(autoincrement())
+  tagId Int
   Cat   Cat? @relation(fields: [catId], references: [id])
   catId Int
-  Tag   Tag  @relation(fields: [tagId], references: [id])
+  Tag   Tag? @relation(fields: [tagId], references: [id])
+
+  @@id([tagId, catId])
 }
 
 model Tag {
